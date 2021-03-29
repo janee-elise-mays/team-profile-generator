@@ -1,7 +1,7 @@
 // TODO: Include packages needed for this application
 const fs = require('fs')
 const inquirer = require('inquirer');
-const createMD = require('./utils/generateMarkdown');
+// const createMD = require('./utils/generateMarkdown');
 
 // TODO: Create an array of questions for user input
 const questions =
@@ -32,19 +32,25 @@ const questions =
             name: "job",
             choices: ["Engineer", "Intern", "I don't want to add any more team members."],
         },
-
-            switch("checkbox") {
-            case "Engineer":
-            inquirer.prompt([
-        {
-            type: "input",
-            message: "What is your GitHub username?",
-            name: "engusername",
-        },
-        {
-            type: "input",
-            message: "What is your GitHub username?",
-            name: "engusername"
-        }
-            break;)]}
     ])
+        .then((answers) => {
+            // console.log(answers)
+
+
+            switch ("checkbox") {
+                case "Engineer":
+                    inquirer.prompt([
+                        {
+                            type: "input",
+                            message: "What is your GitHub username?",
+                            name: "engusername",
+                        },
+                        {
+                            type: "input",
+                            message: "What is your GitHub username?",
+                            name: "engusername"
+                        },
+                    ])
+                    break;
+            }
+        })
