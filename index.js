@@ -32,47 +32,58 @@ const questions =
             name: "job",
             choices: ["Engineer", "Intern", "I don't want to add any more team members."],
         },
+        
     ])
-        .then((answers) => {
-            console.log(answers)
+    .then((answers) => {
+        console.log(answers)
 
+const engineerQuestions = function()
+        inquirer.prompt([
+            {
+                type: "input",
+                message: "What is the Engineer's name?",
+                name: "engineername",
+            },
+            {
+                type: "input",
+                message: "What is the team Engineer's id?",
+                name: "engineerid",
+            },
+            {
+                type: "input",
+                message: "What is the Engineer's GitHub username?",
+                name: "engineergithub",
+            },
+        ])
+const internQuestions =
+        inquirer.prompt([
+            {
+                type: "input",
+                message: "What is the Intern’s name?",
+                name: "internname",
+            },
+            {
+                type: "input",
+                message: "What is the team Intern’s id?",
+                name: "internid",
+            },
+            {
+                type: "input",
+                message: "What is the team Intern’s email?",
+                name: "internemail",
+            },
+            {
+                type: "input",
+                message: "Where does the Intern go to school?",
+                name: "internschool",
+            },
+        ])
 
-            switch ("checkbox") {
-                case "Engineer":
-                    inquirer.prompt([
-                        {
-                            type: "input",
-                            message: "What is your GitHub username?",
-                            name: "engusername",
-                        },
-                        {
-                            type: "input",
-                            message: "What is your GitHub username?",
-                            name: "engusername"
-                        },
-                    ])
-                    break;
-            }
-        })
-const generateHTML = (answers) =>
-    `<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-  <title>Document</title>
-</head>
-<body>
-  <div class="jumbotron jumbotron-fluid style = color:purple;">My Team</div>
-  <div class="container">
-    <h1 class="display-4">${answers.name}</h1>
-    <p class="lead">ID: ${answers.location}.</p>
-    <h3>Example heading <span class="badge badge-secondary">Contact Me</span></h3>
-    <ul class="list-group">
-      <li class="list-group-item">My GitHub username is ${answers.github}</li>
-      <li class="list-group-item">LinkedIn: ${answers.linkedin}</li>
-    </ul>
-  </div>
-</body>
-</html>`;
+    function renderLicenseBadge(job) {
+        if (job == "Engineer"){
+            return function(engineerQuestions)
+        }else if(job == "Intern"){
+            return function(internQuestions)
+        }else(job === "I don't want to add any more team members.")
+            return console.log(answers);
+    }
