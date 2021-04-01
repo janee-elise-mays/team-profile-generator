@@ -79,7 +79,7 @@ const internQuestions =
             },
         ])
 
-    function renderLicenseBadge(job) {
+    function  {
         if (job == "Engineer"){
             return function(engineerQuestions)
         }else if(job == "Intern"){
