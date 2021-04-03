@@ -18,7 +18,7 @@ name: "managerid",
 {
 type: "input",
 message: "What is the team manager's email?",
-name: "email",
+name: "manemail",
 },
 {
 type: "input",
@@ -54,17 +54,17 @@ inquirer.prompt([
 {
 type: "input",
 message: "What is the Engineer's name?",
-name: "engineername",
+name: "name",
 },
 {
 type: "input",
 message: "What is the team Engineer's id?",
-name: "engineerid",
+name: "id",
 },
 {
 type: "input",
 message: "What is the Engineer's GitHub username?",
-name: "engineergithub",
+name: "github",
 },
 {
 type: "checkbox",
@@ -79,17 +79,17 @@ inquirer.prompt([
 {
 type: "input",
 message: "What is the Intern’s name?",
-name: "internname",
+name: "name",
 },
 {
 type: "input",
 message: "What is the team Intern’s id?",
-name: "internid",
+name: "id",
 },
 {
 type: "input",
 message: "What is the team Intern’s email?",
-name: "internemail",
+name: "email",
 },
 {
 type: "input",
@@ -104,25 +104,26 @@ choices: ["Engineer", "Intern", "I don't want to add any more team members."],
 },
 ])
 }
-// const generateHTML = (answers) =>
-//     `<!DOCTYPE html>
-// <html lang="en">
-// <head>
-//   <meta charset="UTF-8">
-//   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-//   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-//   <title>Document</title>
-// </head>
-// <body>
-//   <div class="jumbotron jumbotron-fluid style = color:purple;">My Team</div>
-//   <div class="container">
-//     <h1 class="display-4">${answers.name}</h1>
-//     <p class="lead">ID: ${answers.location}.</p>
-//     <h3>Example heading <span class="badge badge-secondary">Contact Me</span></h3>
-//     <ul class="list-group">
-//       <li class="list-group-item">My GitHub username is ${answers.github}</li>
-//       <li class="list-group-item">LinkedIn: ${answers.linkedin}</li>
-//     </ul>
-//   </div>
-// </body>
-// </html>`;
+
+const generateHTML = (answers) =>
+    `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <title>Document</title>
+</head>
+<body>
+  <div class="jumbotron jumbotron-fluid style = color:purple;">My Team</div>
+  <div class="container">
+    <h1 class="display-4">${answers.name}</h1>
+    <p class="lead">ID: ${answers.id}.</p>
+    <h3>Example heading <span class="badge badge-secondary">Contact Me</span></h3>
+    <ul class="list-group">
+      <li class="list-group-item">My GitHub username is ${answers.github}</li>
+      <li class="list-group-item">LinkedIn: ${answers.linkedin}</li>
+    </ul>
+  </div>
+</body>
+</html>`;
