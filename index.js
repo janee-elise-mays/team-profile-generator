@@ -35,7 +35,13 @@ const questions = inquirer.prompt([
 ])
 .then((answers) => {
     console.log(answers)
-
+function determineQuestion(job) {
+    if (job == "Engineer"){
+        return (engineerQuestions);
+    } else if(job == "Intern"){
+        return (internQuestions);
+    } else(job == "I don't want to add any more team members.")
+        return console.log(answers);
     // check if choices are engineer or intern call like functions, if not then go to HTML file generation. 
         // IF "Engineer" is selected as job, THEN prompted questions are generated. Once questions are answered, the series is directed back to 
         // the "job" checkbox question.
@@ -43,9 +49,9 @@ const questions = inquirer.prompt([
         // the "job" checkbox question.
         // IF "I don't want to add any more team members." is selected, 
     // THEN the HTML file is generated with the results.
-})
+}
 
-const engineerQuestions = function(){
+const engineerQuestions =
     inquirer.prompt([
         {
             type: "input",
@@ -69,8 +75,7 @@ const engineerQuestions = function(){
             choices: ["Engineer", "Intern", "I don't want to add any more team members."],
         },
     ])
-}
-const internQuestions = function (){
+const internQuestions =
     inquirer.prompt([
         {
             type: "input",
@@ -99,12 +104,3 @@ const internQuestions = function (){
             choices: ["Engineer", "Intern", "I don't want to add any more team members."],
         },
     ])
-}
-function ()  {
-    if (job == "Engineer"){
-        return function(engineerQuestions);
-    }else if(job == "Intern"){
-        return function(internQuestions);
-    }else(job === "I don't want to add any more team members.")
-        return console.log(answers);
-}
