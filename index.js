@@ -31,17 +31,13 @@ message: "What type of team member would you like to add?",
 name: "job",
 choices: ["Engineer", "Intern", "I don't want to add any more team members."],
 },
-
 ])
 .then((answers) =>{
-// console.log(answers)
-
-// function determineQuestion(job) {
-if (job == "Engineer") {
-    return (engineerQuestions);
-} else if (job == "Intern") {
-    return (internQuestions);
-} else (job == "I don't want to add any more team members.")
+if (answers == "Engineer") {
+    return (engineerQuestions());
+} else if (answers == "Intern") {
+    return (internQuestions());
+} else (answers == "I don't want to add any more team members.")
 return console.log(answers);
 })
 // check if choices are engineer or intern call like functions, if not then go to HTML file generation. 
