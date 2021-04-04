@@ -1,7 +1,6 @@
 // TODO: Include packages needed for this application
 const fs = require('fs')
 const inquirer = require('inquirer');
-// const createMD = require('./utils/generateMarkdown');
 
 // TODO: Create an array of questions for user input
 const questions = inquirer.prompt([
@@ -35,11 +34,12 @@ choices: ["Engineer", "Intern", "I don't want to add any more team members."],
 .then((answers) =>{
 if (answers.job == "Engineer") {
     return (engineerQuestions());
-} else if (answer.job == "Intern") {
+} else if (answers.job == "Intern") {
     return (internQuestions());
-} else (answer.job == "I don't want to add any more team members.")
-return console.log(answers);
+} else (answers.job == "I don't want to add any more team members.")
+return ((answers) => fs.writeFile('index.html', generateHTML(answers)));
 })
+
 // check if choices are engineer or intern call like functions, if not then go to HTML file generation. 
 // IF "Engineer" is selected as job, THEN prompted questions are generated. Once questions are answered, the series is directed back to 
 // the "job" checkbox question.
@@ -73,6 +73,14 @@ name: "job",
 choices: ["Engineer", "Intern", "I don't want to add any more team members."],
 },
 ])
+.then((answers) =>{
+    if (answers.job == "Engineer") {
+        return (engineerQuestions());
+    } else if (answers.job == "Intern") {
+        return (internQuestions());
+    } else (answers.job == "I don't want to add any more team members.")
+    return ((answers) => fs.writeFile('index.html', generateHTML(answers)));
+    })
 }
 function internQuestions() {
 inquirer.prompt([
@@ -103,6 +111,14 @@ name: "job",
 choices: ["Engineer", "Intern", "I don't want to add any more team members."],
 },
 ])
+.then((answers) =>{
+    if (answers.job == "Engineer") {
+        return (engineerQuestions());
+    } else if (answers.job == "Intern") {
+        return (internQuestions());
+    } else (answers.job == "I don't want to add any more team members.")
+    return ((answers) => fs.writeFile('index.html', generateHTML(answers)));
+    })
 }
 
 const generateHTML = (answers) =>
