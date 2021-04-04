@@ -33,11 +33,11 @@ choices: ["Engineer", "Intern", "I don't want to add any more team members."],
 },
 ])
 .then((answers) =>{
-if (answers == "Engineer") {
+if (answers.job == "Engineer") {
     return (engineerQuestions());
-} else if (answers == "Intern") {
+} else if (answer.job == "Intern") {
     return (internQuestions());
-} else (answers == "I don't want to add any more team members.")
+} else (answer.job == "I don't want to add any more team members.")
 return console.log(answers);
 })
 // check if choices are engineer or intern call like functions, if not then go to HTML file generation. 
