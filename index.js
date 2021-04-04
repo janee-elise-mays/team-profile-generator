@@ -37,14 +37,10 @@ if (answers.job == "Engineer") {
 } else if (answers.job == "Intern") {
     return (internQuestions());
 } else (answers.job == "I don't want to add any more team members.")
-return ((answers) => fs.writeFile('index.html', generateHTML(answers)));
+return fs.writeFile('index.html', generateHTML(answers));
 })
 
-// check if choices are engineer or intern call like functions, if not then go to HTML file generation. 
-// IF "Engineer" is selected as job, THEN prompted questions are generated. Once questions are answered, the series is directed back to 
-// the "job" checkbox question.
-// IF "intern" is selected as job, THEN prompted questions are generated. Once questions are answered, the series is directed back to 
-// the "job" checkbox question.
+// function generateHTML() {fs.writeFile('index.html', generateHTML(answers));}
 // IF "I don't want to add any more team members." is selected, 
 // THEN the HTML file is generated with the results.
 
@@ -79,7 +75,7 @@ choices: ["Engineer", "Intern", "I don't want to add any more team members."],
     } else if (answers.job == "Intern") {
         return (internQuestions());
     } else (answers.job == "I don't want to add any more team members.")
-    return ((answers) => fs.writeFile('index.html', generateHTML(answers)));
+    return fs.writeFile('index.html', generateHTML(answers));
     })
 }
 function internQuestions() {
@@ -117,7 +113,7 @@ choices: ["Engineer", "Intern", "I don't want to add any more team members."],
     } else if (answers.job == "Intern") {
         return (internQuestions());
     } else (answers.job == "I don't want to add any more team members.")
-    return ((answers) => fs.writeFile('index.html', generateHTML(answers)));
+    return fs.writeFile('index.html', generateHTML(answers));
     })
 }
 
